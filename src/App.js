@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import Pin from './components/otp';
+import { useState } from 'react';
 
 function App() {
+
+  const [otp, setotp] = useState("")
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Pin length={4} Changeotphandler={(value) => {setotp(value)}}/>
+
+      <h3>The value of otp is {otp}</h3>
     </div>
   );
 }
